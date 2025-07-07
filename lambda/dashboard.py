@@ -53,14 +53,18 @@ st.markdown("<div class='big-font'>🧠 SaaS License Waste Predictor</div>", uns
 st.markdown("<div class='sub-font'>Predict unused license waste and optimize your SaaS spend like a pro.</div><br>", unsafe_allow_html=True)
 
 # ----------------- Load ML Model -----------------
-model_path = os.path.join("lambda", "model.pkl")
+model_path = os.path.join(os.path.dirname(__file__), "model.pkl")
 
 if not os.path.exists(model_path):
-    st.error("❌ model.pkl not found. Please run generate_model.py.")
+    st.error("❌ model.pkl not found. Please ensure it's uploaded correctly.")
     st.stop()
 
-with open(model_path, "rb") as f:
-    model = pickle.load(f)
+try:
+    with open(model_path, "rb") as f:
+        model = pickle.load(f)
+except Exception as e:
+    st.error(f"Failed to load model: {e}")
+    st.stop()
 
 # ----------------- Input Form -----------------
 with st.form("predict_form", clear_on_submit=False):
@@ -109,6 +113,7 @@ if submitted:
             "Monthly Cost": monthly_cost,
             "Prediction": prediction
         }
+
         log_file = os.path.join(os.path.dirname(__file__), "waste_log.csv")
         file_exists = os.path.exists(log_file)
 
