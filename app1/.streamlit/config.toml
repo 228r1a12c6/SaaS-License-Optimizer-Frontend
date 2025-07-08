@@ -1,7 +1,12 @@
+[server]
+headless = true
+port = 8501
+enableCORS = false
+
 [theme]
-base="dark"
-primaryColor="#00c7ec"
-backgroundColor="#0e1117"
-secondaryBackgroundColor="#262730"
-textColor="#fafafa"
-font="sans serif"
+base = "dark"
+primaryColor = "#00c7ec"
+backgroundColor = "#0e1117"
+secondaryBackgroundColor = "#262730"
+textColor = "#fafafa"
+font = "sans serif"
