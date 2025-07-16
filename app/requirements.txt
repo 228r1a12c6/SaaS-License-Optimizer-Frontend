@@ -1,17 +1,4 @@
-# Core Data + ML
-pandas==2.2.1
-numpy==1.26.4
-scikit-learn==1.3.2
-joblib==1.4.0
-
-# Google Sheets & OAuth
-google-api-python-client==2.125.0
-google-auth==2.29.0
-google-auth-oauthlib==1.2.0
-google-auth-httplib2==0.2.0
-
-# Streamlit App Framework
 streamlit==1.35.0
-
-# Visualization (used in admin_dashboard.py)
-plotly==5.22.0
+pandas==2.2.2
+scikit-learn==1.4.2
+joblib==1.4.2

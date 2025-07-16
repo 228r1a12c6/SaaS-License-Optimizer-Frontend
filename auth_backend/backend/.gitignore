@@ -1,5 +1,0 @@
-# Ignore model and sensitive data
-models/*.pkl
-data/*.csv
-__pycache__/
-.env
